@@ -1,0 +1,227 @@
+body {
+    background: #fff;
+}
+
+.mainSlide {
+    height: 350px;
+    position: relative;
+}
+.mainSlide .cell {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: none;
+    height: 350px;
+}
+.mainSlide .cell .prom {
+    background-position:center top;
+    background-repeat:no-repeat;
+    height:350px;
+    width:100%;
+    text-align:center;
+    position:relative;
+}
+.mainSlide .cur{
+    display: block;
+    z-index: 150;
+}
+
+/* 圆点按钮 */
+.mainSlide .pgWidth {
+    position: relative;
+    z-index: 300;
+}
+.mainSlide .slideNum {
+    position: absolute;
+    left: 50%;
+    top: 310px;
+    margin-left: -60px;
+}
+.mainSlide .slideNum i{
+    display:block;
+    float:left;
+    width:16px;
+    height:16px;
+    text-align:center;
+    line-height:25px;
+    cursor:pointer;background:#000;
+    opacity:.4;
+    filter:alpha(opacity=40);
+    border-radius:8px;
+    margin-right:8px;
+}
+.mainSlide .slideNum .cur {
+    background: #d70057;
+    opacity: 1;
+}
+
+/* 左右尖尖 */
+.mainSlide .leftAr {
+    left: 50%;
+    margin-left: -578px;
+}
+.mainSlide .leftAr, .mainSlide .rightAr {
+    display: none;
+    width: 22px;
+    height: 36px;
+    position: absolute;
+    top: 150px;
+    background: url(http://0.js.al.okbuycdn.com/resources/images/v6/index/slideconcroll.png) no-repeat 0 0;
+    z-index: 200;
+}
+.mainSlide .rightAr {
+    right: 50%;
+    background-position: -22px 0;
+    margin-right: -578px;
+}
+
+/* brand */
+.brand {
+    height: 315px;
+    background: #f5f5f5;
+    width: 100%;
+}
+.brand {
+    height: 315px;
+    background: #f5f5f5;
+    width: 100%;
+}
+.brand .brandin .brandinin {
+    width: 1210px;
+}
+.brand .brandin .brandinin a {
+    width: 99px;
+    text-align: center;
+    height: 64px;
+    background: #fff;
+    display: block;
+    float: left;
+    border-right: 1px solid #f5f5f5;
+    border-bottom: 1px solid #f5f5f5;
+}
+.brand .brandin .brandinin a img {
+    margin-top: 7px;
+}
+
+/* list */
+.list2 {
+    overflow-x: hidden;
+    margin-top: 30px;
+}
+.list2 .list2in {
+    width: 1220px;
+}
+.list2 ul li {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.list2 ul li a {
+    font-family: "Microsoft YaHei";
+    border: 1px solid #e9e7ea;
+    float: left;
+    display: block;
+    position: relative;
+    width: 593px;
+    height: 208px;
+}
+.list2 ul li a img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 593px;
+    height: 208px;
+}
+
+.list2 ul li a .tit1 {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 76px;
+    color: #333;
+    font-size: 14px;
+    line-height: 18px;
+    width: 200px;
+    text-align: center;
+}
+
+.list2 ul li a .tit2 {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 94px;
+    color: #333;
+    font-size: 14px;
+    line-height: 18px;
+    width: 200px;
+    text-align: center;
+}
+.list2 ul li a .tit3 {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 144px;
+    color: #333;
+    font-size: 14px;
+    line-height: 18px;
+    width: 200px;
+    text-align: center;
+    color: #d70057;
+    font-size: 20px;
+    font-weight: bold;
+}
+.list2 ul li a:hover {
+    border-color: #d70057;
+}
+
+/* list3 */
+.list3 {
+    overflow-x: hidden;
+}
+.list3 .list3in {
+    width: 1220px;
+}
+.list3 ul li {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.list3 ul li a {
+    font-family: "Microsoft YaHei";
+    border: 1px solid #e9e7ea;
+    width: 388px;
+    height: 329px;
+    display: block;
+    position: relative;
+}
+.list3 ul li a img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 388px;
+    height: 328px;
+}
+.list3 ul li a .list3tit1 {
+    position: absolute;
+    z-index: 2;
+    left: 20px;
+    bottom: 50px;
+    color: #333;
+    line-height: 18px;
+    width: 250px;
+    text-align: left;
+    font-size: 18px;
+}
+.list3 ul li a .list3tit1 span {
+    color: #d70057;
+    font-weight: bold;
+}
+.center{
+    margin: 0 auto;
+}

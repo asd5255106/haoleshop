@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/captcha.js"></script>
+    <script src="../js/register.js"></script>
+</head>
+<body>
+    <div class="miniheader">
+        <div class="miniheaderLeft">
+            <a href="../../index.html">
+                <img src="http://0.js.al.okbuycdn.com/resources/images/v6/login/login_new_logo.png" alt="">
+            </a>
+        </div>
+        <div class="miniheader_right">
+            <span class="right_span">
+                <i></i>
+                天天低价
+            </span>
+            <span class="right_span">
+                <i></i>
+                正品保障
+            </span>
+            <span class="right_span">
+                <i></i>
+                7天退换货
+            </span>
+            <span class="right_span">
+                <i></i>
+                评价晒单有礼
+            </span>
+        </div>
+    </div>
+    <!-- 背景图 -->
+    <a href="javascript:;" class="login_new_bg">
+        <img border="0" width="2000" height="560" src="http://i.okaybuy.cn/static/68074f6f4abb3bd39eec3acfebacf164.jpg" alt="">
+    </a>
+
+    <div class="loginwarpper">
+        <div class="login">
+            <div class="loginRight registerRight" name="registerForm" id="registerForm">
+                <div class="register_new_title">
+                    <span class="reg">欢迎注册</span>
+                    <a class="reglogin" href="./login.html" style="float: right;">登录</a>
+                </div>
+                <!-- 注册账号 -->
+                <div id="mobileoremail">
+                    <div id="mobilediv">
+                        <div class="login_txt register_txt redborder">
+                            <input type="text" name="mobile" id="username" placeholder="请输入用户名" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                <!-- 错误提示 -->
+                <div class="registererror" id="emailormobilemsg">
+                    <span></span>
+                </div>
+
+                <!-- 密码 -->
+                <div class="login_txt register_txt redborder">
+                    <input type="password" name="password" id="password" placeholder="请设置密码" autocomplete="off" maxlength="16">
+                </div>
+                <!-- 密码错误 -->
+                <div id="pwderror" class="registererror">
+                    <span></span>
+                </div>
+
+                <!-- 验证码 -->
+                <div class="registercode">
+                    <div class="validateCodeDiv" id="validateCodeDiv_1">
+                        <div class="mobilecheck_3">
+                            <!-- 输入框 -->
+                            <div class="mcback validatecodeout">
+                                <input type="text" id="validatecode" name="codecheck" autocomplete="off" placeholder="图形验证码">
+                            </div>
+                            <!-- 验证码框 -->
+                            <div class="image-code-box">
+                                <canvas width="125" height="40" id="captcha"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 验证码错误框 -->
+                <div id="validatemsg" class="registererror">
+                    <span>图形验证码不正确</span>
+                </div>
+                <!-- 注册按钮 -->
+                <input type="button" class="register_btn" value="注册" id="register_btn">
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="OB_clearB"></div> -->
+
+
+    <!-- footer -->
+    <div class="minifooter">
+        Copyright © 2007-2020 OkBuy.com All Rights Reserved &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       天津好乐买信息技术有限公司&nbsp;&nbsp;津B2-20200075&nbsp;&nbsp;京公网安备&nbsp;110105006859
+    </div>
+</body>
+</html>
