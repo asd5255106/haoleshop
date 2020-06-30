@@ -19,9 +19,8 @@ $(() => {
     captcha.draw(document.querySelector('#captcha'), r => {
         console.log('验证码', r);
         imgCode = r;
-
         /* 自动触发标签的事件 */
-        $("#validateCodeDiv_1").trigger("blur");
+        $("#validatecode").trigger("blur");
     });
 
     // (1) 正则校验
@@ -30,11 +29,11 @@ $(() => {
     /* 思路：给输入框添加事件(失去焦点)监听，当失去焦点的时候，应该获取输入框的内容进行正则校验 */
     let options = {
         "username": {
-            reg: `/^[a-zA-Z]{2,6}$/.test(val)`,
+            reg: `/^[a-zA-Z]{2,10}$/.test(val)`,
             msg: "请输入2-10位的正确用户名"
         },
         "password": {
-            reg: `/^[a-zA-Z0-9]{3,6}$/.test(val)`,
+            reg: `/^[a-zA-Z0-9]{3,10}$/.test(val)`,
             msg: "密码不符合规范"
         },
         "validatecode": {
@@ -50,10 +49,29 @@ $(() => {
         let val = $.trim($(this).val());
         // console.log(val)
 
-        // if (eval(options[option_id].reg)) {
-        //     $(this).next().text("");
-        // } else {
-        //     $(this).next().text(options[option_id].msg);
-        // }
+        // console.log($(this).parents(".showError").next().children());
+        
+        if (eval(options[option_id].reg)) {
+            $(this).parents(".showError").next().children().text("");
+        } else {
+            $(this).parents(".showError").next().children().text(options[option_id].msg);
+        }
+    })
+
+    
+    $("#register_btn").on("click",function() {
+        $("#username,#password,#validatecode").trigger("blur");
+
+        let spans = Array.from($("#registerForm .registererror span"))
+        // console.log(spans)
+        spans.forEach(item => {
+            let idx = 0
+            if($(item).text() !== ""){
+                $("#register_btn").off("click")
+                return
+            }
+        })
+
+        console.log("++++")
     })
 })

@@ -1,19 +1,34 @@
-class Brand{
-    constructor(data){
-        this.data = data;
-        this.brand = null;
-        this.init();
+$(() => {
+    // 吸顶效果
+    let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+    let moveTop = document.querySelector(".nnav").offsetTop();
+    console.log(moveTop)
+
+    if (scrollTop >= moveTop) {
+        headdiv.style.position = "sticky";
+        headdiv.style.top = "0px";
+        headdiv.style.zIndex = "2";
+    } else {
+        headdiv.style.position = "static";
     }
-    init(){
-        this.creatUI();
-    }
-    creatUI(){
-        let brandImg = this.data.map(item => `
+
+    // 轮播图
+    class Brand {
+        constructor(data) {
+            this.data = data;
+            this.brand = null;
+            this.init();
+        }
+        init() {
+            this.creatUI();
+        }
+        creatUI() {
+            let brandImg = this.data.map(item => `
             <a href="javascript:;">
                         <img src=${item.src} alt="">
             </a>`).join("")
 
-        this.brand = $(`
+            this.brand = $(`
         <div class="brand">
             <div class="w1200">
                 <p>
@@ -27,21 +42,21 @@ class Brand{
             </div>
     </div>`)
 
-    $(".brandin-wrap").append(this.brand);
+            $(".brandin-wrap").append(this.brand);
+        }
     }
-}
 
-class List{
-    constructor(data){
-        this.data = data;
-        this.list = null;
-        this.init();
-    }
-    init(){
-        this.creatUI()
-    }
-    creatUI(){
-        let lists = this.data.map(item => `
+    class List {
+        constructor(data) {
+            this.data = data;
+            this.list = null;
+            this.init();
+        }
+        init() {
+            this.creatUI()
+        }
+        creatUI() {
+            let lists = this.data.map(item => `
         <li>
             <a href="javascript:;">
                 <img src="${item.src}" alt="">
@@ -51,7 +66,7 @@ class List{
             </a>
         </li>`)
 
-        this.list = $(`
+            this.list = $(`
         <div class="list2 w1200">
             <div class="list2in">
                 <ul id="indexhtml2">
@@ -60,21 +75,21 @@ class List{
             </div>
         </div>`)
 
-        $(".list-wrap").append(this.list);
+            $(".list-wrap").append(this.list);
+        }
     }
-}
 
-class List2{
-    constructor(data){
-        this.data = data;
-        this.list2 = null;
-        this.init();
-    }
-    init(){
-        this.creatUI()
-    }
-    creatUI(){
-        let lis = this.data.map(item => `
+    class List2 {
+        constructor(data) {
+            this.data = data;
+            this.list2 = null;
+            this.init();
+        }
+        init() {
+            this.creatUI()
+        }
+        creatUI() {
+            let lis = this.data.map(item => `
         <li>
             <a href="javascript:;">
                 <img src=${item.src} alt="">
@@ -85,13 +100,15 @@ class List2{
             </a>
         </li>`).join("")
 
-        this.list2 = $(`
+            this.list2 = $(`
         <div class="list3in">
             <ul id="indexhtml3">
                 ${lis}
             </ul>
         </div>`)
 
-        $(".list3").append(this.list2);
+            $(".list3").append(this.list2);
+        }
     }
-}
+
+})

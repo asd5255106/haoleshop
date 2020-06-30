@@ -49,7 +49,7 @@
                     <a class="reglogin" href="./login.html" style="float: right;">登录</a>
                 </div>
                 <!-- 注册账号 -->
-                <div id="mobileoremail">
+                <div id="mobileoremail" class="showError">
                     <div id="mobilediv">
                         <div class="login_txt register_txt redborder">
                             <input type="text" name="mobile" id="username" placeholder="请输入用户名" autocomplete="off">
@@ -62,7 +62,7 @@
                 </div>
 
                 <!-- 密码 -->
-                <div class="login_txt register_txt redborder">
+                <div class="login_txt register_txt redborder showError">
                     <input type="password" name="password" id="password" placeholder="请设置密码" autocomplete="off" maxlength="16">
                 </div>
                 <!-- 密码错误 -->
@@ -71,7 +71,7 @@
                 </div>
 
                 <!-- 验证码 -->
-                <div class="registercode">
+                <div class="registercode showError">
                     <div class="validateCodeDiv" id="validateCodeDiv_1">
                         <div class="mobilecheck_3">
                             <!-- 输入框 -->
@@ -87,7 +87,7 @@
                 </div>
                 <!-- 验证码错误框 -->
                 <div id="validatemsg" class="registererror">
-                    <span>图形验证码不正确</span>
+                    <span></span>
                 </div>
                 <!-- 注册按钮 -->
                 <input type="button" class="register_btn" value="注册" id="register_btn">
