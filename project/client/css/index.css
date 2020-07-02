@@ -174,7 +174,7 @@ body {
     font-size: 20px;
     font-weight: bold;
 }
-.list2 ul li a:hover {
+.list2 ul li a:hover, .list3 ul li a:hover {
     border-color: #d70057;
 }
 

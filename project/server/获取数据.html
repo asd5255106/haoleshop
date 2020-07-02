@@ -8,9 +8,18 @@
 <body>
     <script>
         let arr =[]
-        document.querySelectorAll('.prom').forEach(item => {
+        document.querySelectorAll(".prolist-main ul .gl-item").forEach(item => {
             let obj = {}
-            obj.url = item.style.backgroundImage
+            obj.src ={}
+            item.querySelectorAll(".gl-img a").forEach(item => {
+                obj.src.srcA = item.querySelector(".pdImg").src
+                obj.src.srcB = item.querySelector(".pdImgB").src
+            })
+            obj.name = item.querySelector(".gl-name a").innerText;
+            obj.price = item.querySelector(".gl-price .okprice").innerText;
+            obj.sale = item.querySelector(".gl-price .oksale em").innerText;
+            obj.marketPrice = item.querySelector(".gl-price .market-price").innerText; 
+
             arr.push(obj)
         })
     </script>

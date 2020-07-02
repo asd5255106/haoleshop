@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <!-- <script src="http://localhost/haoleshop/project/client/js/index.js"></script> -->
+    <script src="../js/showTag.js"></script>
+    <script src="../js/require.js" async="true" defer data-main="../js/cart/main.js"></script>
+    <style>
+        .nnav li {
+            position: relative;
+        }
+
+        .nnav a {
+            position: relative;
+        }
+
+        .fixed-on {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .nnav .navvsub {
+            display: none;
+            background-color: #fff;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            z-index: 900;
+            max-width: 1200px;
+            height: 396px;
+            background-color: #fff;
+            box-shadow: 2px 2px 4px #acacac;
+        }
+
+        .nnav .nlihover {
+            display: inline;
+        }
+
+        .nnavarr {
+            position: absolute;
+            top: -7px;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            font-size: 16px;
+            font-family: "\5b8b\4f53";
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nnavmain {
+            padding: 12px 0;
+            overflow: hidden;
+            zoom: 1;
+            font-family: 'Arial';
+        }
+
+        .nnavmain .colbox {
+            float: left;
+            display: inline;
+            padding: 10px 12px;
+            height: 352px;
+            overflow: hidden;
+            border-right: 1px dashed #aeaeae;
+        }
+
+        .nnavmain .colthumb {
+            float: left;
+            display: inline;
+            padding: 10px 10px 10px 12px;
+        }
+
+        .nnavmain .colbox h3,
+        .nnavmain .colthumb h3 {
+            font-size: 12px;
+            font-weight: bold;
+            color: #D20D33;
+        }
+
+        .nnavmain .colbox .catewrap {
+            padding-top: 12px;
+            width: 320px;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        .nnavmain .colbox .catewidth {
+            width: 300px;
+        }
+
+        .nnavmain .colbox .catewrap h3.black {
+            color: #5E5E5E;
+        }
+
+        .nnavmain .colbox .catewrap .context {
+            margin-top: 16px;
+        }
+
+        .nnavmain .colbox .catewrap .context a {
+            float: left;
+            display: inline;
+            width: auto;
+            margin-right: 15px;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            line-height: 14px;
+            color: #5E5E5E;
+            overflow: hidden;
+        }
+
+        .nnavmain .colbox .catewrap .context a.cateitem {
+            width: 50px;
+            margin-right: 8px;
+        }
+
+        .nnavmain .colbox .catewrap .context a.yellow {
+            color: #B17E3F;
+        }
+
+        .nnavmain .colbox .catewrap .context a.red {
+            color: #D92200;
+        }
+
+        .nnavmain .colbox .nconwrap {
+            margin-top: 12px;
+            width: 190px;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        /*.nconwrap p{
+                margin-bottom:10px;
+                padding-left:10px;
+                background:url(nticon.jpg) top left no-repeat;
+            }*/
+        .nconwrap a.yellow {
+            color: #B17E3F;
+        }
+
+        .nconwrap a.red {
+            color: #D92200;
+        }
+
+        .nconwrap a:hover,
+        .nnavmain .colbox .catewrap .context a:hover {
+            color: #d70057;
+        }
+
+        .nnavmain .colbox .catewrap {
+            line-height: 12px
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="header">
+
+    </div>
+
+    <div class="w1200 cartcen">
+        <div class="carttit">
+            <h1>我的购物车</h1>
+        </div>
+        <div class="cartlist">
+            <!-- 头部 -->
+            <table>
+                <thead>
+                    <tr>
+                        <th width="110">
+                            <input type="checkbox" class="checkboxall allcur">
+                            <span class="all">全选</span>
+                        </th>
+                        <th width="470">商品名称</th>
+                        <th width="110">单价</th>
+                        <th width="240">数量</th>
+                        <th width="110">小计</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+            </table>
+
+            <!-- 详细商品 -->
+            <div class="cartlistin">
+                <!-- 渲染出来的 -->
+                <table>
+                    <tbody>
+                        <tr>
+                            <td width="110">
+                                <input type="checkbox" class="checkbox">
+                            </td>
+                            <td width="470">
+                                <a href="javascript:;">
+                                    <img src="http://0.image.al.okbuycdn.com/nbn/w150_150_detect/static/82255fb12da663653e2848551f025156.jpg" alt="" class="img">
+                                    <strong>Nike耐克男式AIR MAX FUSION运动休闲跑步鞋</strong>
+                                    <small>
+                                        尺码：
+                                        <i>40</i>
+                                    </small>
+                                </a>
+                            </td>
+                            <td width="110">
+                                ￥409
+                            </td>
+                            <td width="240">
+                                <!-- 数量控制器 -->
+                                <ul>
+                                    <li>
+                                        <span class="reduce">-</span>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="text" maxlength="1" readonly value="1">
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <span class="add">+</span>
+                                    </li>
+                                    <li></li>
+                                </ul>
+                            </td>
+                            <td width="110">
+                                <span class="pr">
+                                    ￥
+                                    <pr>2045</pr>
+                                </span>
+                                <br>
+                            </td>
+                            <td>
+                                <span class="wish">
+                                    <i>收藏</i>
+                                </span>
+                                <span class="delete">
+                                    <i>删除</i>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td width="110">
+                                <input type="checkbox" class="checkbox">
+                            </td>
+                            <td width="470">
+                                <a href="javascript:;">
+                                    <img src="http://0.image.al.okbuycdn.com/nbn/w150_150_detect/static/82255fb12da663653e2848551f025156.jpg" alt="" class="img">
+                                    <strong>Nike耐克男式AIR MAX FUSION运动休闲跑步鞋</strong>
+                                    <small>
+                                        尺码：
+                                        <i>40</i>
+                                    </small>
+                                </a>
+                            </td>
+                            <td width="110">
+                                ￥409
+                            </td>
+                            <td width="240">
+                                <!-- 数量控制器 -->
+                                <ul>
+                                    <li>
+                                        <span class="reduce">-</span>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="text" maxlength="1" readonly value="1">
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <span class="add">+</span>
+                                    </li>
+                                    <li></li>
+                                </ul>
+                            </td>
+                            <td width="110">
+                                <span class="pr">
+                                    ￥
+                                    <pr>2045</pr>
+                                </span>
+                                <br>
+                            </td>
+                            <td>
+                                <span class="wish">
+                                    <i>收藏</i>
+                                </span>
+                                <span class="delete">
+                                    <i>删除</i>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- 结算 -->
+    <div class="cartsumout cartsumoutbtm">
+        <div class="cartsum">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="110">
+                            <input type="checkbox" class="checkboxall">
+                            <span class="all">全选</span>
+                        </th>
+                        <th width="100" id="delall">
+                            删除所选商品
+                        </th>
+                        <th width="140"></th>
+                        <th width="100">&nbsp;</th>
+                        <th width="100">
+                            商品数量：
+                            <i id="total_num">0</i>
+                        </th>
+                        <th width="140">
+                            商品金额：
+                            <i>
+                                ￥
+                                <pr id="total_last_all">409</pr>
+                            </i>
+                        </th>
+                        <th width="130">
+                            活动优惠
+                            <i>
+                                ￥
+                                <pr id="total_last_reduce">0</pr>
+                            </i>
+                        </th>
+                        <th width="220">
+                            合计(不含运费)：
+                            <i class="pr">
+                                ￥
+                                <pr id="total_price">3890</pr>
+                            </i>
+                        </th>
+                        <th width="160">
+                            <span id="submit" style="background: rgb(215, 0, 87);">去支付</span>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+
+    </div>
+
+    <script>
+    //     $(".header").load("./header.html")
+    //     $(".footer").load("./footer.html")
+    // </script>
+</body>
+</html>

@@ -53,8 +53,11 @@ $(() => {
         
         if (eval(options[option_id].reg)) {
             $(this).parents(".showError").next().children().text("");
+            $(this).parents(".showError").removeClass("form-group-error");
+
         } else {
             $(this).parents(".showError").next().children().text(options[option_id].msg);
+            $(this).parents(".showError").addClass("form-group-error");
         }
     })
 
@@ -62,16 +65,29 @@ $(() => {
     $("#register_btn").on("click",function() {
         $("#username,#password,#validatecode").trigger("blur");
 
-        let spans = Array.from($("#registerForm .registererror span"))
-        // console.log(spans)
-        spans.forEach(item => {
-            let idx = 0
-            if($(item).text() !== ""){
-                $("#register_btn").off("click")
-                return
+        
+        if ($(".form-group-error").length != 0) {
+            // console.log($(".form-group-error").length)
+            return;
+        }
+
+        let data = {
+            username: $.trim($("#username").val()),
+            password: md5($.trim($("#password").val())).slice(0, 15)
+        }
+
+        $.ajax({
+            type: "post",
+            url: "../../server/resgiter/resgiter.php",
+            data,
+            dataType: "json",
+        }).done(data => {
+            if (data.status == "success") {
+                alert("注册成功!");
+                location.href = "../html/login.html";
+            } else {
+                alert(data.msg);
             }
         })
-
-        console.log("++++")
     })
 })

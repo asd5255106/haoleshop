@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/nike.css">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <!-- <script src="http://localhost/haoleshop/project/client/js/index.js"></script> -->
+    <!-- <script src="../js/nike.js"></script> -->
+    <script src="../js/showTag.js"></script>
+    <script src="../js/require.js" async="true" defer data-main="../js/nike/main.js"></script>
+    <style>
+        .nnav li {
+            position: relative;
+        }
+
+        .nnav a {
+            position: relative;
+        }
+
+        .fixed-on {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .nnav .navvsub {
+            display: none;
+            background-color: #fff;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            z-index: 900;
+            max-width: 1200px;
+            height: 396px;
+            background-color: #fff;
+            box-shadow: 2px 2px 4px #acacac;
+        }
+
+        .nnav .nlihover {
+            display: inline;
+        }
+
+        .nnavarr {
+            position: absolute;
+            top: -7px;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            font-size: 16px;
+            font-family: "\5b8b\4f53";
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nnavmain {
+            padding: 12px 0;
+            overflow: hidden;
+            zoom: 1;
+            font-family: 'Arial';
+        }
+
+        .nnavmain .colbox {
+            float: left;
+            display: inline;
+            padding: 10px 12px;
+            height: 352px;
+            overflow: hidden;
+            border-right: 1px dashed #aeaeae;
+        }
+
+        .nnavmain .colthumb {
+            float: left;
+            display: inline;
+            padding: 10px 10px 10px 12px;
+        }
+
+        .nnavmain .colbox h3,
+        .nnavmain .colthumb h3 {
+            font-size: 12px;
+            font-weight: bold;
+            color: #D20D33;
+        }
+
+        .nnavmain .colbox .catewrap {
+            padding-top: 12px;
+            width: 320px;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        .nnavmain .colbox .catewidth {
+            width: 300px;
+        }
+
+        .nnavmain .colbox .catewrap h3.black {
+            color: #5E5E5E;
+        }
+
+        .nnavmain .colbox .catewrap .context {
+            margin-top: 16px;
+        }
+
+        .nnavmain .colbox .catewrap .context a {
+            float: left;
+            display: inline;
+            width: auto;
+            margin-right: 15px;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            line-height: 14px;
+            color: #5E5E5E;
+            overflow: hidden;
+        }
+
+        .nnavmain .colbox .catewrap .context a.cateitem {
+            width: 50px;
+            margin-right: 8px;
+        }
+
+        .nnavmain .colbox .catewrap .context a.yellow {
+            color: #B17E3F;
+        }
+
+        .nnavmain .colbox .catewrap .context a.red {
+            color: #D92200;
+        }
+
+        .nnavmain .colbox .nconwrap {
+            margin-top: 12px;
+            width: 190px;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        /*.nconwrap p{
+                margin-bottom:10px;
+                padding-left:10px;
+                background:url(nticon.jpg) top left no-repeat;
+            }*/
+        .nconwrap a.yellow {
+            color: #B17E3F;
+        }
+
+        .nconwrap a.red {
+            color: #D92200;
+        }
+
+        .nconwrap a:hover,
+        .nnavmain .colbox .catewrap .context a:hover {
+            color: #d70057;
+        }
+
+        .nnavmain .colbox .catewrap {
+            line-height: 12px
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="header">
+
+    </div>
+
+    <!-- 中间块 -->
+    <div style="background-color: #f9f9f9;">
+        <div class="w1200">
+            <!-- 选择器 -->
+            <div id="selector">
+                <div class="filter-section">
+                    <div class="filter-wrapper">
+                        <div class="section-item" style="border-top: 0;">
+                            <h5 class="filter-label">性别：</h5>
+                            <div class="filter-con">
+                                <span class="filter-all">
+                                    <a href="javascript:;" class="check">全部</a>
+                                </span>
+                                <!-- 分类列表项 -->
+                                <div class="filter-list">
+                                    <ul class="clear_fix">
+                                        <li class="cate-item">
+                                            <a href="javascript:;">男</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">女</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-item">
+                            <h5 class="filter-label">品牌</h5>
+                            <div class="filter-con" style="height: 56px;">
+                                <span class="filter-all">
+                                    <a href="javascript:;">全部</a>
+                                </span>
+                                <!-- 分类列表项 -->
+                                <div class="filter-list">
+                                    <ul class="clear_fix">
+                                        <li class="cate-item">
+                                            <a href="javascript:;">耐克</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">阿迪达斯</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">骆驼</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">安德玛</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">阿迪达斯运动生活</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">三叶草</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">斯凯奇运动系列</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">李宁</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">贵人鸟</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">安踏</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">Pony</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">亚瑟士</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">361°</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">彪马</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <a class="emore show-all">
+                                    更多
+                                    <span class="trige"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="section-item">
+                            <h5 class="filter-label">尺码：</h5>
+                            <div class="filter-con" style="height:56px">
+                                <span class="filter-all">
+                                    <a href="javascript:;" class="check">全部</a>
+                                </span>
+                                <!-- 分类列表项 -->
+                                <div class="filter-list">
+                                    <ul class="clear_fix">
+                                        <li class="cate-item">
+                                            <a href="javascript:;">34</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">35</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">36</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">37</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">38</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">39</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">40</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">41</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">42</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">43</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">44</a>
+                                        </li>
+                                        <li class="cate-item">
+                                            <a href="javascript:;">45</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <a class="emore show-all">
+                                    更多
+                                    <span class="trige"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- 价钱选择 -->
+                        <div class="section-item" style="border-bottom: 0;">
+                            <h5 class="filter-label">价格：</h5>
+                            <div class="filter-con">
+                                <div class="fprice-con clear_fix">
+                                    <div class="filter-price">
+                                        <span class="fpricetxt">￥</span>
+                                        <input type="text" class="fprice-num" title="最低价">
+                                    </div>
+                                    <span class="fgeo">-</span>
+                                    <div class="filter-price">
+                                        <span class="fpricetxt">￥</span>
+                                        <input type="text" class="fprice-num" title="最高价">
+                                    </div>
+                                    <span class="fpricebtn">确定</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="catmore">
+                    <a href="javascript:;" class="mbtn">
+                        更多
+                        <span class="micon"></span>
+                    </a>
+                </div>
+            </div>
+            <!-- 商品信息 -->
+            <div class="prolist-container">
+                <div class="prolist-head" id="listheader" style="position: static;">
+                    <div class="pro-catetab">
+                        <a href="javascript:;" class="ordby_default cur">默认</a>
+                        <a href="javascript:;" class="ordby_default">
+                            价格
+                            <i></i>
+                        </a>
+                        <a href="javascript:;" class="ordby_default">
+                            销量
+                            <i></i>
+                        </a>
+                        <a href="javascript:;" class="ordby_default">最新</a>
+                    </div>
+                </div>
+                <!-- 主要页面 -->
+                <div class="prolist-main">
+                    <!-- <ul class="clear_fix">
+                        <li class="gl-item">
+                            <div class="gl-wrap">
+                                <div class="gl-img">
+                                    <a href="javascript:;">
+                                        <img src="http://0.image.al.okbuycdn.com/nbn/s270_270/static/4c4cb3b70e28d13947c150bcf8d5d260.jpg"
+                                            alt="" class="pdImg">
+                                    </a>
+                                </div>
+                                <p class="gl-name">
+                                    <a href="javascript:;"> Nike耐克 男式 AIR MAX2 LIGHT 复古跑步鞋</a>
+                                </p>
+                                <p class="gl-price">
+                                    ￥
+                                    <span class="okprice">389</span>
+                                    <span class="oksale">(<em>4.3</em>)</span>
+                                    <span class="market-price">899</span>
+                                </p>
+                                <div id="gl-btn">
+                                    <input type="button" class="gl-btn" value="加入购物车">
+                                </div>
+                            </div>
+                        </li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- footer -->
+    <div class="footer">
+
+    </div>
+
+    <!-- gotoTop -->
+    <div id="gotoTop"
+        style="position: fixed; left: 50%; margin-left: 615px; bottom: 70px; cursor: pointer; display: none;">
+        <a href="#" class="top"></a>
+    </div>
+    <script>
+        // $(".header").load("./header.html")
+        // $(".footer").load("./footer.html")
+    </script>
+</body>
+
+</html>
