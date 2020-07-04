@@ -14,6 +14,7 @@ require(["index","nike"],function(index,nike) {
     index.gotoTop();
     index.navMove();
 
-    nike.loginFirst();
+    nike.addCart();
     nike.creatNike();
+    nike.addNumCart();
 })

@@ -64,12 +64,18 @@ body {
     float: left;
 }
 
+
 .checkbox, .checkboxall, .giftcheckbox {
     width: 20px;
     height: 20px;
     display: block;
+    background: url(http://0.js.al.okbuycdn.com/resources/images/v6/cart/checkbox.png) no-repeat;
     margin-left: 30px;
     margin-right: 10px;
+}
+
+.cartlist table span.cur, .cartlist table span.allcur {
+    background: url(http://0.js.al.okbuycdn.com/resources/images/v6/cart/checkbox.png) -20px 0 no-repeat;
 }
 .cartlist table td a {
     color: #333;
@@ -177,6 +183,18 @@ img.img {
     padding-top: 20px;
     color: #999;
 }
+.cartlist table span.wishcur{
+    background:url("http://0.js.al.okbuycdn.com/resources/images/v6/cart/carticon.png") -26px 0 no-repeat;
+}
+.cartlist table span.deletecur{
+    background:url("http://0.js.al.okbuycdn.com/resources/images/v6/cart/carticon.png") -78px 0 no-repeat;
+}
+.cartlist table span.wishhover{
+    background:url("http://0.js.al.okbuycdn.com/resources/images/v6/cart/carticon.png") -26px 0 no-repeat;
+}
+.cartlist table span.wishhover i,.cartlist table span.deletecur i{
+    display:inline;
+}
 
 .cartsumout {
     width: 100%;
@@ -216,6 +234,11 @@ div.cartsumoutbtm {
 
 .cartsum table span ,.cartsum table input{
     float: left;
+}
+
+.cartsum table span.cur, .cartsum table span.allcur{
+    background: url(http://0.js.al.okbuycdn.com/resources/images/v6/cart/checkbox.png) -20px 0 no-repeat;
+
 }
 .all {
     margin-top: 2px;

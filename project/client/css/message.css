@@ -1,0 +1,116 @@
+.prodConTop {
+    width: 100%;
+    padding: 10px 0;
+    background: #fff;
+    position: relative;
+    
+}
+.prodConTopIn {
+    position: relative;
+    margin-top: 10px;
+}
+.prodConTopIn, .prodConCenIn, .prodConBtmIn {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.pDetailLe {
+    width: 452px;
+    float: left;
+    position: relative;
+    z-index: 150;
+}
+p.pBidPic375 {
+    position: relative;
+}
+
+.pBigPic {
+    width: 450px;
+    height: 450px;
+    border: 1px solid #ececec;
+    overflow: hidden;
+    text-align: center;
+    background: #fff;
+}
+
+.pBidPic375 img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.pBigPic img {
+    width: 450px;
+}
+.prodConTopInLiImg {
+    border-bottom: 1px solid #ececec;
+    background: #fff;
+    border-right: 1px solid #ececec;
+}
+/* .prodConTopInLiImg {
+    border-bottom: 1px solid #ececec;
+    background: #fff;
+    border-right: 1px solid #ececec;
+} */
+
+table.multi_view td {
+    text-align: center;
+    height: 49px;
+    border-right: 1px solid #ececec;
+}
+.prodConTopInLiImg td {
+    position: relative;
+}
+.multi_viewTd_1 {
+    border-left: 1px solid #ececec;
+}
+.prodConTopInLiImg td a {
+    display: block;
+    position: relative;
+}
+table.multi_view td img {
+    float: left;
+}
+.prodConTopInLiImgBor {
+    width: 47px;
+    height: 46px;
+    border: 2px solid #c03;
+    position: absolute;
+    z-index: 200;
+    top: 0;
+    left: -1px;
+    background: url(http://0.js.al.okbuycdn.com/resources/images/v6/product/detail/prodjiao.png) no-repeat -4px 0;
+}
+.prodConDetail {
+    float: left;
+    margin-left: 29px;
+    width: 719px;
+}
+.prodAllName {
+    font-size: 16px;
+    margin-top: 6px;
+    line-height: 24px;
+    font-weight: bold;
+    color: #333;
+    font-family: 'Microsoft Yahei';
+    position: relative;
+}
+.fontbold {
+    font-weight: bold;
+}
+.morebrand {
+    float: right;
+    line-height: 20px;
+    color: #999;
+    font-size: 12px;
+    font-weight: normal;
+    font-family: Verdana;
+}
+.morebrand a {
+    color: #d70057;
+    margin-left: 5px;
+}
+.yaohe {
+    color: #d70057;
+    font-family: 'Microsoft Yahei';
+    font-size: 14px;
+}

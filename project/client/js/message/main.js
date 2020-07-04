@@ -4,8 +4,9 @@ console.log("加载成功")
 require.config({
     paths: {
         "jquery": "../jquery-3.4.1",
-        "index": "index",
-        "slider": "Slider copy",
+        "index": "../index/index",
+        "message":"messaga",
+        // "slider": "Slider copy",
         "nike": "../nike/nike"
         // "move": "move"
     }
@@ -21,17 +22,17 @@ require.config({
 })
 
 
-require(["index","slider","nike"], function (index,slider,nike) {
+require(["index","nike"], function (index,nike) {
     index.showName();
     index.exit();
     index.gotoTop();
-    index.moveTop();
+    // index.moveTop();
     index.navMove();
-    index.creatBrand();
-    index.creatList();
-    index.creatList2();
+    // index.creatBrand();
+    // index.creatList();
+    // index.creatList2();
 
-    slider.banner();
+    // slider.banner();
 
     nike.addNumCart();
 })

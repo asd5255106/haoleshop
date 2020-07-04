@@ -5,12 +5,20 @@ require.config({
     paths:{
         "jquery":"../jquery-3.4.1",
         "index":"../index/index",
-        // "cart":"cart"
+        "cart":"cart",
+        "nike":"../nike/nike"
     }
 })
 
-require(["index"],function(index) {
+require(["index","cart","nike"],function(index,cart,nike) {
     index.showName();
     index.exit();
     index.navMove();
+
+    cart.getCart();
+    cart.all();
+    cart.addNum();
+    cart.deleteCart();
+
+    nike.addNumCart();
 })

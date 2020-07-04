@@ -1,21 +1,5 @@
 define(["jquery"], function ($) {
 
-    function loginFirst() {
-            let uesr_name = localStorage.getItem("user_name") || "";
-            console.log(uesr_name)
-            $(".prolist-main").on("click", ".gl-btn", function () {
-                if (uesr_name == "") {
-                    console.log(123);
-
-                    alert("请您先登录")
-                    location.href = "./login.html";
-                } /* else {
-                location.href = "cart.html"
-            } */
-            })
-    }
-
-
     function creatNike() {
         $.ajax({
             type: "post",
@@ -37,9 +21,9 @@ define(["jquery"], function ($) {
             }
             creatUI() {
 
-                let lis = Array.from(this.data).map((item, idx) =>
+                let lis = Array.from(this.data).map((item) =>
                     `
-            <li class="gl-item" data-id="${idx}">
+            <li class="gl-item" data-id="${item.good_id}">
                 <div class="gl-wrap">
                     <div class="gl-img">
                         <a href="javascript:;">
@@ -72,8 +56,64 @@ define(["jquery"], function ($) {
         }
     }
 
+    function addCart() {
+        $(".prolist-main").on("click", ".gl-btn", function () {
+            let user_id = localStorage.getItem("user_id") || "";
+            let user_name = localStorage.getItem("user_name") || "";
+            let good_id = $(this).parents(".gl-item").attr("data-id");
+
+            // console.log(good_id,user_id,user_name)
+            // if (uesr_name == "") {
+            //     console.log(123);
+
+            //     alert("请您先登录")
+            //     location.href = "./login.html";
+            // } else {
+            //     alert("加入购物车成功")
+            // }
+
+            if (user_id && user_name) {
+                /* 发请求，执行添加到购物车 */
+                $.ajax({
+                    url: "http://localhost/haoleshop/project/server/cart/addCart.php",
+                    data: { user_id, good_id }
+                }).done(data => {
+                    console.log("返回值:", data);
+                    alert("加入成功")
+                    addNumCart()
+                })
+    
+            } else {
+                /* 跳转去登录 */
+                alert("请您先登录")
+                location.href = "./login.html";
+            }
+        })
+    }
+
+    // 添加购物车数量
+    function addNumCart(){
+        let user_id = localStorage.getItem("user_id") || "";
+        $.ajax({
+            url:"http://localhost/haoleshop/project/server/cart/getCart.php",
+            data:{user_id},
+            dataType:"json"
+        }).done(data => {
+            // console.log(data);
+            let total = 0
+            data.forEach(item => {
+                total += item.num * 1;
+            })
+            // console.log(total);
+
+            $(".c .cart span b").text(total)
+            
+        })
+    }
+
     return {
-        loginFirst: loginFirst,
-        creatNike: creatNike
+        addCart: addCart,
+        creatNike: creatNike,
+        addNumCart:addNumCart
     }
 });

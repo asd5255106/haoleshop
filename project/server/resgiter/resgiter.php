@@ -12,7 +12,7 @@ if(mysqli_num_rows($r) > 0){
     echo '{"status":"error","msg":"该用户已经存在，请重新填写注册的昵称!!"}';
 }else{
     $res = "INSERT INTO user " .
-      "(id,username,password)" .
+      "(user_id,username,password)" .
       "VALUES " .
       "(NULL,'$username','$password')";
   

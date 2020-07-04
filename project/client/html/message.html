@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/showTag.js"></script>
+    <script src="../js/require.js" async="true" defer data-main="../js/message/main.js"></script>
+    <style>
+        .nnav li {
+            position: relative;
+        }
+
+        .nnav a {
+            position: relative;
+        }
+
+        .fixed-on {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .nnav .navvsub {
+            display: none;
+            background-color: #fff;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            z-index: 900;
+            max-width: 1200px;
+            height: 396px;
+            background-color: #fff;
+            box-shadow: 2px 2px 4px #acacac;
+        }
+
+        .nnav .nlihover {
+            display: inline;
+        }
+
+        .nnavarr {
+            position: absolute;
+            top: -7px;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            font-size: 16px;
+            font-family: "\5b8b\4f53";
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nnavmain {
+            padding: 12px 0;
+            overflow: hidden;
+            zoom: 1;
+            font-family: 'Arial';
+        }
+
+        .nnavmain .colbox {
+            float: left;
+            display: inline;
+            padding: 10px 12px;
+            height: 352px;
+            overflow: hidden;
+            border-right: 1px dashed #aeaeae;
+        }
+
+        .nnavmain .colthumb {
+            float: left;
+            display: inline;
+            padding: 10px 10px 10px 12px;
+        }
+
+        .nnavmain .colbox h3,
+        .nnavmain .colthumb h3 {
+            font-size: 12px;
+            font-weight: bold;
+            color: #D20D33;
+        }
+
+        .nnavmain .colbox .catewrap {
+            padding-top: 12px;
+            width: 320px;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        .nnavmain .colbox .catewidth {
+            width: 300px;
+        }
+
+        .nnavmain .colbox .catewrap h3.black {
+            color: #5E5E5E;
+        }
+
+        .nnavmain .colbox .catewrap .context {
+            margin-top: 16px;
+        }
+
+        .nnavmain .colbox .catewrap .context a {
+            float: left;
+            display: inline;
+            width: auto;
+            margin-right: 15px;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            line-height: 14px;
+            color: #5E5E5E;
+            overflow: hidden;
+        }
+
+        .nnavmain .colbox .catewrap .context a.cateitem {
+            width: 50px;
+            margin-right: 8px;
+        }
+
+        .nnavmain .colbox .catewrap .context a.yellow {
+            color: #B17E3F;
+        }
+
+        .nnavmain .colbox .catewrap .context a.red {
+            color: #D92200;
+        }
+
+        .nnavmain .colbox .nconwrap {
+            margin-top: 12px;
+            width: 190px;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        /*.nconwrap p{
+                margin-bottom:10px;
+                padding-left:10px;
+                background:url(nticon.jpg) top left no-repeat;
+            }*/
+        .nconwrap a.yellow {
+            color: #B17E3F;
+        }
+
+        .nconwrap a.red {
+            color: #D92200;
+        }
+
+        .nconwrap a:hover,
+        .nnavmain .colbox .catewrap .context a:hover {
+            color: #d70057;
+        }
+
+        .nnavmain .colbox .catewrap {
+            line-height: 12px
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="header">
+
+    </div>
+
+    <!-- 中间部分 -->
+    <div class="prodConTop">
+        <div class="prodConTopIn">
+            <div class="pDetailLe" id="pDetailLe">
+                <!-- 大图片 -->
+                <p class="pBigPic pBidPic375">
+                    <span style="position: absolute;left: 0;bottom: 0;display: block;width: 450px;height: 450px;">
+                        <img src="http://0.image.al.okbuycdn.com/nbn/w450_450/static/31ddc0d6cc44d435b1d4d2feb66ff0ee.jpg"
+                            alt=""></span>
+                </p>
+                <!-- 小图片 -->
+                <div class="prodConTopInLiImg">
+                    <table cellpadding="0" cellspacing="0" border="0" class="multi_view">
+                        <tbody>
+                            <tr>
+                                <td class="multi_viewTd_1">
+                                    <a href="javascript:void(0);" class="">
+                                        <img src="http://0.image.al.okbuycdn.com/nbn/s59_59_crop/static/31ddc0d6cc44d435b1d4d2feb66ff0ee.jpg"
+                                            alt="耐克JSTM-CI9981-006-1" name="view1" width="49" height="49" border="0">
+                                        <span class="prodConTopInLiImgBor" style="display: block;"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="prodConDetail">
+                <h1 class="prodAllName">
+                    <span class="fontbold">
+                        <a href="javascript:;" style="color:#333">Nike耐克
+                        </a>
+                        男士
+                        <span id="prodTitleName">DOWNSHIFTER 10跑步鞋JSTM-CI9981-006</span>
+                    </span>
+                    <span class="morebrand">
+                        更多
+                        <a href="javascript:;">Nike耐克</a>
+                    </span>
+                    <br>
+                    <span class="yaohe"></span>
+                </h1>
+                <p class="prodbrandlink" style="display: none">
+                    更多
+                    <span id="BBrandName">Nike耐克</span>
+                    产品
+                    <a href="javascript:;">NIKE耐克</a>
+                </p>
+
+                <div class="prodPriceLiJ">
+                    <div class="prodPrice">
+                        <div class="pricewrap clear_fix">
+                            <div class="prodPriceLi">
+                                <span class="pricetxt">好乐买价</span>
+                                <span class="colorred">
+                                    ￥
+                                    <span id="prodPriceAj">369</span>
+                                </span>
+                                <span class="prodPriceLiJ_2">￥259</span>
+                            </div>
+                            <div class="prodPriceLiZk">
+                                <span id="prodDiscount">7折</span>
+                            </div>
+                            <a href="javascript:;" class="totalcomment">
+                                <span class="cmtxt">累计评价</span>
+                                <span class="cmtnum">0</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="prodoutletstime">
+
+                    </div>
+                    <div class="prohd" id="prodActivity" style="padding-top: 10px; padding-bottom: 11px;">
+                        <div class="activitywrap" style="padding: 0px;">
+                            <div class="prodH" style="padding-top: 0px;">活动</div>
+                            <div class="proactcon">
+                                <p>
+                                    <span class="prodicon">特价</span>
+                                    <span class="prodhdtext">
+                                        <a href="javascript:;" style="color:#a46c01">耐克特惠专场 >></a>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prodColor">
+                    <div class="prodH">颜色</div>
+                    <p class="prodColorImg">
+                        <span>
+                            <img src="http://0.image.al.okbuycdn.com/nbn/s59_59_crop/static/31ddc0d6cc44d435b1d4d2feb66ff0ee.jpg"
+                                alt="">
+                            <i></i>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="prodConSize">
+                    <div class="prodH"></div>
+                    <ul class="selectSize clear" id="sizeList">
+                        <li>
+                            <p class="selectCurArea">
+                                <span id="39" class="nosyock">
+                                    <span class="text">39</span>
+                                </span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="selectCurArea">
+                                <span class="nosyock">
+                                    <span class="text">39</span>
+                                </span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="selectCurArea">
+                                <span class="nosyock">
+                                    <span class="text">39</span>
+                                </span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="selectCurArea">
+                                <span class="nosyock">
+                                    <span class="text">39</span>
+                                </span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="selectCurArea">
+                                <span class="nosyock">
+                                    <span class="text">39</span>
+                                </span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="selectCurArea">
+                                <span class="nosyock">
+                                    <span class="text">39</span>
+                                </span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="selectCurArea">
+                                <span class="nosyock">
+                                    <span class="text">39</span>
+                                </span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="selectCurArea">
+                                <span class="nosyock">
+                                    <span class="text">39</span>
+                                </span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="selectCurArea">
+                                <span class="nosyock">
+                                    <span class="text">39</span>
+                                </span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="selectCurArea">
+                                <span class="nosyock">
+                                    <span class="text">39</span>
+                                </span>
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="prodH prodBuyNum" style="margin-top:0;">数量</div>
+                    <div>
+                        <ul class="selectCount">
+                            <li>
+                                <a href="javascript:;" class="reduce" id="reduce">-</a>
+                            </li>
+                            <li>
+                                <span class="inputBorderBg">
+                                    <input type="text" class="inputClass inputNum inputNum_1" value="1">
+                                </span>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="add" id="add">+</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 加入购物车按钮 -->
+                    <div class="cartopewrap">
+                        <div id="CartButton">
+                            <input type="button" class="prodCartBtn" id="prodCartBtn" value="加入购物车">
+                        </div>
+                    </div>
+                    <div class="prodNotice" style="display: block;letter-spacing: 0px;">
+                        <p style="line-height: 1.5;text-align: justify;"></p>
+                    </div>
+                    <div class="okbuyservice"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+
+    </div>
+</body>
+
+</html>

@@ -6,7 +6,7 @@ define(["jquery"], function ($) {
         $(() => {
             let uesr_name = localStorage.getItem("user_name") || "";
             if (uesr_name) {
-                console.log(uesr_name)
+                // console.log(uesr_name)
                 $(".logined").css("display", "block").next().css("display", "none")
                 $(".logined .name").text(`${uesr_name}:欢迎您`)
             }
@@ -17,6 +17,8 @@ define(["jquery"], function ($) {
         $(".logined .logout").click(function () {
             $(".unlogin").css("display", "block").prev().css("display", "none")
             localStorage.removeItem("user_name")
+            localStorage.removeItem("user_id")
+            location.reload()
         })
     }
 
